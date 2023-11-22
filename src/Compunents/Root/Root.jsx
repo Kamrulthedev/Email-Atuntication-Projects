@@ -19,7 +19,7 @@ const RootRouter = createBrowserRouter([
             element:<Login></Login>
         },
         {
-            path:'/reister',
+            path:'/Reister',
             element:<Reister></Reister>
         }
        ]
