@@ -4,8 +4,8 @@ const Reister = () => {
 
   const handleRegister = e =>{
     e.preventDefault();
-    const email = e.taeget.email.value;
-    const password = e.taeget.password.value
+    const email = e.target.email.value;
+    const password = e.target.password.value;
     console.log(email, password)
   }
 
@@ -15,12 +15,12 @@ const Reister = () => {
         <div className='border p-4  text-center'>
           <div className='mx-auto '>
             <h2 className='text-3xl font-bold'>Please Register</h2>
-            <form onClick={handleRegister} >
+            <form onSubmit={handleRegister} >
                 <input className='border-2 rounded-lg mt-4 p-2 w-80' type="email" placeholder='Your Email' name="email" id="" />
                 <br />
                 <input  type="password" name="password" placeholder='Password' id="" className="mt-4 border-2  rounded-lg p-2 w-80" />
                 <br />
-             <input type="SUBMIT"className="mt-4 btn border-2  rounded-lg p-2 w-80" name="REGISTER" id="" />
+             <input type="submit"className="mt-4 btn btn-primary border-2  rounded-lg p-2 w-80" value="REGISTER" id="" />
             </form>
           </div>
         </div>
