@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const HeroPages = () => {
 
+
      const handlerSubmit =e =>{
         e.prevenDefult();
-        console.log('kasjdlfjlks')
+       const email = e.target.email.value;
+       const password = e.target.password.value;
+       console.log(email, password)
         
      }
   

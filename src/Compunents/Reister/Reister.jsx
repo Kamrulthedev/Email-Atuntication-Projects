@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import auth from '../firbases/firbaese.init';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 
 const Reister = () => {
+  const [registerError, setRegisterError] = useState('')
 
   const handleRegister = e =>{
     e.preventDefault();
@@ -17,7 +18,8 @@ const Reister = () => {
       console.log(result.user);
     })
     .catch(error =>{
-     console.log(error)
+     console.log(error);
+     setRegisterError(error.message);
     })
   }
 
@@ -34,6 +36,9 @@ const Reister = () => {
                 <br />
              <input type="submit"className="mt-4 btn btn-primary border-2  rounded-lg p-2 w-80" value="REGISTER" id="" />
             </form>
+           {
+            registerError && <p className='text-red-500 mt-6'>{registerError}</p>
+           }
           </div>
         </div>
     );
