@@ -5,6 +5,7 @@ import { createUserWithEmailAndPassword } from 'firebase/auth';
 const Reister = () => {
   const [registerError, setRegisterError] = useState('')
   const [sucsses, setSucsses] = useState('')
+  const [showPassword, setShowPassword] = useState(false)
 
   const handleRegister = e =>{
     e.preventDefault();
@@ -47,7 +48,13 @@ const Reister = () => {
             <form onSubmit={handleRegister} >
                 <input className='border-2 rounded-lg mt-4 p-2 w-80' type="email" placeholder='Your Email' name="email" id="" />
                 <br />
-                <input  type="password" name="password" placeholder='Password' required id="" className="mt-4 border-2  rounded-lg p-2 w-80" />
+                <input  
+                type={showPassword ? "password": "text"} 
+                name="password" 
+                placeholder='Password' 
+                required id="" 
+                className="mt-4 border-2  rounded-lg p-2 w-80" />
+                <span onClick={() =>setShowPassword(!showPassword)} className='btn w-12'>Show</span>
                 <br />
              <input type="submit"className="mt-4 btn btn-primary border-2  rounded-lg p-2 w-80" required value="REGISTER" id="" />
             </form>
