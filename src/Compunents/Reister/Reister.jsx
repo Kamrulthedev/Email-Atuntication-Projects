@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import auth from '../firbases/firbaese.init';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
-
+import { FaEye ,FaEyeSlash   } from 'react-icons/fa';
 const Reister = () => {
   const [registerError, setRegisterError] = useState('')
   const [sucsses, setSucsses] = useState('')
@@ -48,13 +48,17 @@ const Reister = () => {
             <form onSubmit={handleRegister} >
                 <input className='border-2 rounded-lg mt-4 p-2 w-80' type="email" placeholder='Your Email' name="email" id="" />
                 <br />
-                <input  
-                type={showPassword ? "password": "text"} 
+             <div className='relative -mr-4  flex justify-center'>
+             <input  
+                type={showPassword ? "text" : "password"} 
                 name="password" 
                 placeholder='Password' 
                 required id="" 
                 className="mt-4 border-2  rounded-lg p-2 w-80" />
-                <span onClick={() =>setShowPassword(!showPassword)} className='btn w-12'>Show</span>
+                <span onClick={() =>setShowPassword(!showPassword)} className='  mt-7'>{
+                      showPassword ? <FaEyeSlash></FaEyeSlash>:  <FaEye></FaEye>
+                      }</span>
+             </div>
                 <br />
              <input type="submit"className="mt-4 btn btn-primary border-2  rounded-lg p-2 w-80" required value="REGISTER" id="" />
             </form>
