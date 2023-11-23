@@ -9,12 +9,15 @@ const Reister = () => {
     const email = e.target.email.value;
     const password = e.target.password.value;
     console.log(email, password)
-    createUserWithEmailAndPassword(auth, email, password)
+    /*
+    create user
+    */ 
+     createUserWithEmailAndPassword(auth, email, password)
     .then(result =>{
-      console.log(result.user)
+      console.log(result.user);
     })
     .catch(error =>{
-      console.log(error);
+     console.log(error)
     })
   }
 

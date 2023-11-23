@@ -9,6 +9,7 @@ const Haeder = () => {
         <li><NavLink to={'/'}>Home</NavLink></li>
         <li><NavLink to={'/Login'}>Login</NavLink></li>
         <li><NavLink to={'/Reister'}>Reister</NavLink></li>
+        <li><NavLink to={'/HeroPages'}>Hero Pages</NavLink></li>
 
     </>
 

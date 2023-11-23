@@ -4,6 +4,7 @@ import Home from '../Home/Home';
 import Login from '../Login/Login';
 import HomePages from '../HomePages/HomePages';
 import Reister from '../Reister/Reister';
+import HeroPages from '../HeroPages/HeroPages';
 
 const RootRouter = createBrowserRouter([
     {
@@ -21,6 +22,10 @@ const RootRouter = createBrowserRouter([
         {
             path:'/Reister',
             element:<Reister></Reister>
+        },
+        {
+            path:'/HeroPages',
+            element:<HeroPages></HeroPages>
         }
        ]
     }
