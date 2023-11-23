@@ -1,4 +1,6 @@
 import React from 'react';
+import auth from '../firbases/firbaese.init';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
 
 const Reister = () => {
 
@@ -7,6 +9,13 @@ const Reister = () => {
     const email = e.target.email.value;
     const password = e.target.password.value;
     console.log(email, password)
+    createUserWithEmailAndPassword(auth, email, password)
+    .then(result =>{
+      console.log(result.user)
+    })
+    .catch(error =>{
+      console.log(error);
+    })
   }
 
 
